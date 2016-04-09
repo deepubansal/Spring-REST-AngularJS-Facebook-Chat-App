@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.xebia.hackathon.spicepad.domain.RegisterRequest;
@@ -13,7 +14,7 @@ import com.xebia.hackathon.spicepad.domain.UserResponse;
 import com.xebia.hackathon.spicepad.service.UserService;
 
 @RestController
-@RequestMapping("/register")
+@RequestMapping("/user")
 public class UserController {
 	
 	private static Logger logger = LoggerFactory.getLogger(UserController.class);
@@ -27,4 +28,12 @@ public class UserController {
 		UserResponse registeredUser = userService.registerUser(registerRequest);
 		return registeredUser;
 	}
+
+    @RequestMapping(produces="application/json", value="/get", method = RequestMethod.GET)
+    public UserResponse  getUser(@RequestParam("fbUserId") String fbUserId) {
+        logger.debug("Received get user Request: " + fbUserId);
+        UserResponse registeredUser = userService.getUser(fbUserId);
+        return registeredUser;
+    }
+
 }

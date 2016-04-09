@@ -44,6 +44,7 @@ public class UserServiceImpl implements UserService {
 		UserResponse userResponse = new UserResponse();
 		userResponse.setFlightDateId(flightDate.getId());
 		userResponse.setId(user.getId());
+		userResponse.getDisplayName();
 		return userResponse;
 	}
 
@@ -65,6 +66,22 @@ public class UserServiceImpl implements UserService {
 		   flightDate = flightDateDao.save(flightDate);
 		}
         return flightDate;
+    }
+
+    @Override
+    public UserResponse getUser(String fbUserId) {
+        List<User> users = userDao.findByFbUserId(fbUserId);
+        if (users.size() > 0) {
+            User user = users.get(0);
+            UserResponse userResponse = new UserResponse();
+            userResponse.setFlightDateId(user.getFlightDate().getId());
+            userResponse.setId(user.getId());
+            userResponse.setDisplayName(user.getDisplayName());
+            return userResponse;
+        }
+        else {
+            return null;
+        }
     }
 
 

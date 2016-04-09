@@ -6,4 +6,6 @@ import com.xebia.hackathon.spicepad.domain.UserResponse;
 public interface UserService {
 
     public abstract UserResponse registerUser(RegisterRequest registerRequest);
+
+    public abstract UserResponse getUser(String fbUserId);
 }

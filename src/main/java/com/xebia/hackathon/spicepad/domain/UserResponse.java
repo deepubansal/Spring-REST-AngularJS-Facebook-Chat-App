@@ -4,6 +4,7 @@ public class UserResponse {
 
     Integer id;
     Integer flightDateId;
+    String displayName;
 
     public Integer getId() {
         return id;
@@ -19,5 +20,13 @@ public class UserResponse {
 
     public void setFlightDateId(Integer flightDateId) {
         this.flightDateId = flightDateId;
+    }
+
+    public String getDisplayName() {
+        return displayName;
+    }
+
+    public void setDisplayName(String displayName) {
+        this.displayName = displayName;
     }
 }

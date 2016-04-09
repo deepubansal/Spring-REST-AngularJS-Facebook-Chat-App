@@ -7,26 +7,24 @@
         <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_01_green.jpg" alt="avatar" />
         
         <div class="chat-about">
-          <div class="chat-with">Chat with Vincent Porter</div>
-          <div class="chat-num-messages">already 1 902 messages</div>
+          <div class="chat-with">SpicePad's Chat - Flight No.{{flightNo}}</div>
         </div>
         <i class="fa fa-star"></i>
       </div> <!-- end chat-header -->
       
-      <div class="chat-history">
+      <div class="chat-history" scroll-glue-bottom>
         <ul>
           <li ng-repeat="message in messages" class="clearfix">
-            <div class="message-data align-right">
+            <div ng-class="(message.displayName==displayName) ? 'align-left' : 'align-right'" class="message-data">
               <span class="message-data-time" >10:10 AM, Today</span> &nbsp; &nbsp;
               <span class="message-data-name" >{{message.displayName}}</span> <i class="fa fa-circle me"></i>
               
             </div>
-            <div class="message other-message float-right">
+            <div ng-class="(message.displayName==displayName) ? 'my-message float-left' : 'other-message float-right'" class="message">
                 {{message.message}}
                 </div>
           </li>
         </ul>
-        
       </div> <!-- end chat-history -->
       
       <div class="chat-message clearfix">
