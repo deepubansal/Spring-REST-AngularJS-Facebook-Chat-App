@@ -34,6 +34,7 @@
 <script src="app/lib/angular/angular-ui.js"></script>
 <script src="app/lib/angular/angular-min.js"></script>
 <script src="app/lib/angular/angular-res-min.js"></script>
+<script src="app/lib/angular/angular-keep-values.min.js"></script>
 
 <!-- App -->
 <script src="app/scripts/app.js"></script>
@@ -88,7 +89,10 @@
    }(document, 'script', 'facebook-jssdk'));
 </script>
 <h1 id="fb-welcome"></h1>
-
+<div ng-controller="BaseController" ng-init="init('${flightNo}','${date}')">
+	<input type="hidden" ng-model="flightNo" value="" keep-current-value></input>
+	<input type="hidden" ng-model="date" value="" keep-current-value></input>
+</div>
   <div>
     <div ng-view></div>
   </div>

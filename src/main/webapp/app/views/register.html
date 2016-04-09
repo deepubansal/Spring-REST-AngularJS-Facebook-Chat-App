@@ -1,24 +1,24 @@
-<div id="wrapper">
+<div id="wrapper" class="join">
 
 <!--LOGIN FORM-->
 <form name="login-form" class="login-form" action="" method="post">
 
-	<!--HEADER-->
+    <!--HEADER-->
     <div class="header">
     <!--TITLE--><h1>Join Forum</h1><!--END TITLE-->
     <!--DESCRIPTION--><span>Please provide Display Name for the Spice Pad forum.</span><!--END DESCRIPTION-->
     </div>
     <!--END HEADER-->
-	
-	<!--CONTENT-->
+    
+    <!--CONTENT-->
     <div class="content">
-	<!--USERNAME--><input name="displayName" type="text" class="input username" value="Display Name" onfocus="this.value=''" /><!--END USERNAME-->
+    <!--USERNAME--><input name="displayName" type="text" class="input username" ng-model="registerRequest.displayName" placeholder="Display Name" /><!--END USERNAME-->
     </div>
     <!--END CONTENT-->
     
     <!--FOOTER-->
     <div class="footer">
-    <!--LOGIN BUTTON--><input type="submit" name="submit" value="Lets Join Spice Pad Forum" class="button" /><!--END LOGIN BUTTON-->
+    <!--LOGIN BUTTON--><input type="button" name="submit" value="Lets Join Spice Pad Forum" ng-click="register()" class="button" /><!--END LOGIN BUTTON-->
    
     </div>
     <!--END FOOTER-->

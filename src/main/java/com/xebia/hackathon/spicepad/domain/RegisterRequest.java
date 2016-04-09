@@ -1,6 +1,7 @@
 package com.xebia.hackathon.spicepad.domain;
 
-import org.joda.time.LocalDate;
+import java.util.Date;
+
 import org.springframework.format.annotation.DateTimeFormat;
 
 public class RegisterRequest {
@@ -11,7 +12,7 @@ public class RegisterRequest {
     String displayName;
 
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
-    LocalDate date;
+    Date date;
     
     public String getFlightNo() {
         return flightNo;
@@ -37,11 +38,16 @@ public class RegisterRequest {
     public void setDisplayName(String displayName) {
         this.displayName = displayName;
     }
-    public LocalDate getDate() {
+    public Date getDate() {
         return date;
     }
-    public void setDate(LocalDate date) {
+    public void setDate(Date date) {
         this.date = date;
+    }
+    @Override
+    public String toString() {
+        return "RegisterRequest [flightNo=" + flightNo + ", pnr=" + pnr + ", facebookUserId=" + facebookUserId
+                + ", displayName=" + displayName + ", date=" + date + "]";
     }
     
     

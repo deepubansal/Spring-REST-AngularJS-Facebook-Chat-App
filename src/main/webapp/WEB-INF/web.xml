@@ -32,4 +32,15 @@
 		<url-pattern>/rest/*</url-pattern>
 	</servlet-mapping> 
 
+	<servlet>
+		<servlet-name>home-servlet</servlet-name>
+		<servlet-class>com.xebia.hackathon.spicepad.HomeServlet
+		</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>home-servlet</servlet-name>
+		<url-pattern></url-pattern>
+	</servlet-mapping>
+
 </web-app>

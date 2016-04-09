@@ -9,7 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
-import org.joda.time.LocalDate;
+import java.util.Date;
 
 @Entity
 public class FlightDate {
@@ -18,7 +18,7 @@ public class FlightDate {
     @GeneratedValue(strategy = GenerationType.AUTO)
     Integer id;
     String flightNo;
-    LocalDate date;
+    Date date;
     
     @OneToMany(mappedBy="flightDate")
     List<ChatMessage> messages = new ArrayList<>();
@@ -26,7 +26,7 @@ public class FlightDate {
     public String getFlightNo() {
         return flightNo;
     }
-    public LocalDate getDate() {
+    public Date getDate() {
         return date;
     }
     public List<ChatMessage> getMessages() {
@@ -35,7 +35,7 @@ public class FlightDate {
     public void setFlightNo(String flightNo) {
         this.flightNo = flightNo;
     }
-    public void setDate(LocalDate date) {
+    public void setDate(Date date) {
         this.date = date;
     }
     public void setMessages(List<ChatMessage> messages) {
